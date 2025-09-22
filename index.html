@@ -14,8 +14,8 @@
     --accent: #06b6d4;
     --dark: #0f0f23;
     --darker: #070714;
-    --glass: rgba(255,255,255,0.08);
-    --glass-border: rgba(255,255,255,0.12);
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.12);
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-muted: #64748b;
@@ -158,7 +158,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transition: left 0.8s;
   }
   .cta-button:hover {
@@ -250,7 +250,7 @@
     border-radius: 50px;
     z-index: 999;
     font-weight: 600;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     animation: bannerFadeIn 1.5s ease-out 4s forwards, bannerFloat 4s ease-in-out infinite 5.5s;
   }
   @keyframes bannerFadeIn {
@@ -278,10 +278,10 @@
   }
   @media (max-width: 768px) {
     .nav-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
     }
     .nav-links {
         position: absolute;
@@ -320,7 +320,6 @@
 <body>
   <div class="bg-animation"></div>
   <div class="particles"></div>
-
   <nav class="navbar">
     <div class="nav-content">
       <div class="logo">TechLounge</div>
@@ -335,11 +334,9 @@
       </ul>
     </div>
   </nav>
-
   <div class="event-banner">
     <span id="countdown">Nächstes Event lädt...</span>
   </div>
-
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>TechLounge</h1>
@@ -347,14 +344,12 @@
       <a href="über.html" class="cta-button">Mehr entdecken</a>
     </div>
   </section>
-
   <footer class="footer">
     <div class="footer-content">
       <p>© 2025 TechLounge – Alle Rechte vorbehalten</p>
       <p style="margin-top: 0.5rem; color: var(--text-muted);">Dein digitaler Treffpunkt in Celle</p>
     </div>
   </footer>
-
   <script>
     function createParticles() {
       const particlesContainer = document.querySelector('.particles');
