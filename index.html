@@ -8,17 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary: #ec4899;
-    --accent: #06b6d4;
-    --dark: #0f0f23;
-    --darker: #070714;
-    --glass: rgba(255,255,255,0.08);
-    --glass-border: rgba(255,255,255,0.12);
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #64748b;
+    --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #ec4899; --accent: #06b6d4; --dark: #0f0f23; --darker: #070714; --glass: rgba(255,255,255,0.08); --glass-border: rgba(255,255,255,0.12); --text-primary: #f8fafc; --text-secondary: #cbd5e1; --text-muted: #64748b;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
@@ -49,17 +39,13 @@
   .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
   .nav-links a:hover { color: var(--text-primary); }
   .nav-links a:hover::after { width: 100%; }
-  .section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; min-height: calc(100vh - 200px); }
-  .glass-panel { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; backdrop-filter: blur(20px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-  .glass-panel.visible { opacity: 1; transform: translateY(0); }
-  .glass-panel:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(0,0,0,0.12); }
-  .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, var(--text-primary), var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .page-content { padding: 8rem 2rem 6rem; max-width: 1200px; margin: 0 auto; min-height: calc(100vh - 150px); }
   .event-banner { position: fixed; top: 70px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 1rem 2rem; border-radius: 50px; z-index: 999; font-weight: 600; box-shadow: 0 8px 25px rgba(0,0,0,0.25); animation: bannerFadeIn 1.5s ease-out 4s forwards, bannerFloat 4s ease-in-out infinite 5.5s; }
   @keyframes bannerFadeIn { to { opacity: 1; } }
   @keyframes bannerFloat { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-3px); } }
-  .footer { background: var(--darker); border-top: 1px solid var(--glass-border); padding: 3rem 2rem 2rem; text-align: center; margin-top: 6rem; }
+  .footer { background: var(--darker); border-top: 1px solid var(--glass-border); padding: 3rem 2rem 2rem; text-align: center; }
   .footer-content { max-width: 1200px; margin: 0 auto; }
-  @media (max-width: 768px) { .nav-content { flex-direction: column; gap: 1rem; } .nav-links { gap: 1rem; } .hero { padding: 1rem; } .section { padding: 4rem 1rem; } }
+  @media (max-width: 768px) { .nav-content { flex-direction: column; gap: 1rem; } .nav-links { gap: 1rem; } .hero { padding: 1rem; } .page-content { padding: 6rem 1rem 4rem; } }
 </style>
 </head>
 <body>
@@ -73,7 +59,7 @@
         <li><a href="index.html">Startseite</a></li>
         <li><a href="über.html">Über uns</a></li>
         <li><a href="Warumwir.html">Warum wir</a></li>
-        <li><a href="preise.html">Preise</a></li>
+        <li><a href="preis.html">Preise</a></li>
         <li><a href="menu.html">Café</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
@@ -88,7 +74,7 @@
     <div class="hero-content">
       <h1>TechLounge</h1>
       <p>Dein digitaler Treffpunkt im Herzen von Celle. Erlebe High-Speed Gaming, Premium Arbeitsplätze und die beste Café-Atmosphäre.</p>
-      <a href="about.html" class="cta-button">Mehr entdecken</a>
+      <a href="über.html" class="cta-button">Mehr entdecken</a>
     </div>
     <div class="scroll-indicator">
       <div style="font-size: 2rem;">↓</div>
