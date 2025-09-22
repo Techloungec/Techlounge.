@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt & Standort - TechLounge Celle</title>
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #ec4899; --accent: #06b6d4; --dark: #0f0f23; --darker: #070714; --glass: rgba(255,255,255,0.08); --glass-border: rgba(255,255,255,0.12); --text-primary: #f8fafc; --text-secondary: #cbd5e1; --text-muted: #64748b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+    .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.06) 0%, transparent 50%); animation: backgroundShift 30s ease-in-out infinite; }
+    @keyframes backgroundShift { 0%, 100% { transform: translateX(0) translateY(0); } 50% { transform: translateX(-10px) translateY(10px); } }
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .particle { position: absolute; background: linear-gradient(45deg, var(--primary), var(--accent)); border-radius: 50%; opacity: 0.3; animation: float 8s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0px); opacity: 0.3; } 50% { transform: translateY(-15px); opacity: 0.5; } }
+    .navbar { position: fixed; top: 0; width: 100%; background: rgba(15, 15, 35, 0.9); backdrop-filter: blur(20px); z-index: 1000; padding: 1rem 0; transition: transform 0.3s ease-in-out; }
+    .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: all 0.3s ease; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { width: 100%; }
+    .page-content { padding: 8rem 2rem 6rem; max-width: 1200px; margin: 0 auto; min-height: calc(100vh - 150px); }
+    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, var(--text-primary), var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .contact-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2rem; backdrop-filter: blur(20px); text-align: center; transition: all 0.5s ease; opacity: 0; transform: scale(0.95); }
+    .contact-card.visible { opacity: 1; transform: scale(1); }
+    .contact-card:hover { background: rgba(255,255,255,0.12); transform: scale(1.02); }
+    .contact-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; }
+    .glass-panel { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2.5rem; margin-top: 3rem; backdrop-filter: blur(20px); opacity: 0; transform: translateY(30px); animation: fadeInVisible 1s ease-out 0.5s forwards; }
+    @keyframes fadeInVisible { to { opacity: 1; transform: translateY(0); } }
+    .footer { background: var(--darker); border-top: 1px solid var(--glass-border); padding: 3rem 2rem 2rem; text-align: center; }
+    .footer-content { max-width: 1200px; margin: 0 auto; }
+    @media (max-width: 768px) { .nav-content { flex-direction: column; gap: 1rem; } .nav-links { gap: 1rem; } .page-content { padding: 6rem 1rem 4rem; } }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+  <div class="particles"></div>
+
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="logo">TechLounge</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="about.html">Über uns</a></li>
+        <li><a href="why-us.html">Warum wir</a></li>
+        <li><a href="pricing.html">Preise</a></li>
+        <li><a href="menu.html">Café</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content" id="contact">
+    <h2 class="section-title">Kontakt & Standort</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div><h3>Adresse</h3><p>Wiessenstraße 10<br>29221 Celle</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div><h3>Telefon</h3><p>0123 456789</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📧</div><h3>Email</h3><p>info@techlounge.de</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📶</div><h3>WLAN</h3><p>TechLounge_Gast</p>
+      </div>
+    </div>
+    <div class="glass-panel">
+      <h3 style="color: var(--primary); margin-bottom: 1rem;">Öffnungszeiten</h3>
+      <p style="font-size: 1.1rem;">
+        <strong>Mo–Fr:</strong> 10:00–22:00 Uhr<br>
+        <strong>Sa–So:</strong> 12:00–24:00 Uhr
+      </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.873211568283!2d10.076891677028954!3d52.62539552945898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b0621c585c136b%3A0x630559e282362624!2sWeine-%20und%20Spirituosen-Handlung%20Carl%20Grote!5e0!3m2!1sen!2sde!4v1727021759530!5m2!1sen!2sde"
+              width="100%" height="300" style="border:0; border-radius: 15px; margin-top: 2rem;" 
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 TechLounge – Alle Rechte vorbehalten</p>
+      <p style="margin-top: 0.5rem; color: var(--text-muted);">Dein digitaler Treffpunkt in Celle</p>
+    </div>
+  </footer>
+
+  <script>
+    function createParticles() { /* ... particle creation logic ... */ }
+    function setupScrollAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.contact-card').forEach((el) => observer.observe(el));
+        
+        const contactCards = document.querySelectorAll('.contact-card');
+        contactCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.12}s`;
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        setupScrollAnimations();
+    });
+  </script>
+</body>
+</html>
