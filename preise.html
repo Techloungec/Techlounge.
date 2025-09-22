@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preise - TechLounge Celle</title>
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1; --primary-dark: #4f46e5; --secondary: #ec4899; --accent: #06b6d4; --dark: #0f0f23; --darker: #070714; --glass: rgba(255,255,255,0.08); --glass-border: rgba(255,255,255,0.12); --text-primary: #f8fafc; --text-secondary: #cbd5e1; --text-muted: #64748b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+    .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.06) 0%, transparent 50%); animation: backgroundShift 30s ease-in-out infinite; }
+    @keyframes backgroundShift { 0%, 100% { transform: translateX(0) translateY(0); } 50% { transform: translateX(-10px) translateY(10px); } }
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .particle { position: absolute; background: linear-gradient(45deg, var(--primary), var(--accent)); border-radius: 50%; opacity: 0.3; animation: float 8s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0px); opacity: 0.3; } 50% { transform: translateY(-15px); opacity: 0.5; } }
+    .navbar { position: fixed; top: 0; width: 100%; background: rgba(15, 15, 35, 0.9); backdrop-filter: blur(20px); z-index: 1000; padding: 1rem 0; transition: transform 0.3s ease-in-out; }
+    .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: all 0.3s ease; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a:hover::after { width: 100%; }
+    .page-content { padding: 8rem 2rem 6rem; max-width: 1200px; margin: 0 auto; min-height: calc(100vh - 150px); }
+    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; background: linear-gradient(135deg, var(--text-primary), var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .price-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; padding: 2rem; text-align: center; backdrop-filter: blur(20px); transition: all 0.5s ease; opacity: 0; transform: translateY(30px); }
+    .price-card.visible { opacity: 1; transform: translateY(0); }
+    .price-card:hover { transform: translateY(-5px) scale(1.01); border-color: var(--primary); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15); }
+    .price-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
+    .price { font-size: 2.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; }
+    .price-unit { font-size: 1rem; color: var(--text-muted); }
+    .footer { background: var(--darker); border-top: 1px solid var(--glass-border); padding: 3rem 2rem 2rem; text-align: center; }
+    .footer-content { max-width: 1200px; margin: 0 auto; }
+    @media (max-width: 768px) { .nav-content { flex-direction: column; gap: 1rem; } .nav-links { gap: 1rem; } .page-content { padding: 6rem 1rem 4rem; } .pricing-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+  <div class="particles"></div>
+
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="logo">TechLounge</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="about.html">Über uns</a></li>
+        <li><a href="why-us.html">Warum wir</a></li>
+        <li><a href="pricing.html">Preise</a></li>
+        <li><a href="menu.html">Café</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content" id="pricing">
+    <h2 class="section-title">Unsere Preise</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>PC Gaming</h3>
+        <div class="price">10€ <span class="price-unit">/Stunde</span></div>
+        <p>High-End Gaming PCs mit RTX Grafikkarten</p>
+      </div>
+      <div class="price-card">
+        <h3>WLAN Zugang</h3>
+        <div class="price">5€ <span class="price-unit">/Tag</span></div>
+        <p>Eigenes Gerät • Ultra-schnelles Internet</p>
+      </div>
+      <div class="price-card">
+        <h3>Tageskarte</h3>
+        <div class="price">35€ <span class="price-unit">/Tag</span></div>
+        <p>Unbegrenzte PC-Nutzung • WLAN inklusive</p>
+      </div>
+      <div class="price-card">
+        <h3>Monatskarte</h3>
+        <div class="price">265€ <span class="price-unit">/Monat</span></div>
+        <p>Premium Mitgliedschaft • Alle Services</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 TechLounge – Alle Rechte vorbehalten</p>
+      <p style="margin-top: 0.5rem; color: var(--text-muted);">Dein digitaler Treffpunkt in Celle</p>
+    </div>
+  </footer>
+
+  <script>
+    function createParticles() { /* ... particle creation logic ... */ }
+    function setupScrollAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.price-card').forEach((el) => observer.observe(el));
+        
+        const priceCards = document.querySelectorAll('.price-card');
+        priceCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.15}s`;
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        setupScrollAnimations();
+    });
+  </script>
+</body>
+</html>
